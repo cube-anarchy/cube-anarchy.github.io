@@ -23,16 +23,6 @@ const mouse = {
     down: false
 }
 
-let player = {
-    x: 100,
-    y: 100,
-    width: 50,
-    height: 50,
-    color: "#00ff00",
-    speed: 5,
-    rot: 1
-}
-
 let inputText = "Player"
 
 let inputBg = "#666666"
@@ -48,6 +38,7 @@ document.onkeydown = function(e) {
         }
     }
 }
+
 document.onkeyup = function(e) {keys[e.key] = false}
 
 let angle = 90;
@@ -110,7 +101,7 @@ function line(x1, y1, x2, y2, color="red") {
 let inputFocus = false;
 
 function draw() {
-    if (client != {}) {
+    if (client != {} && client != undefined) {
         display.clearRect(-2000, -2000, 5000, 5000);
         if (client.gameStage == "menu") {
             display.setTransform(1,0,0,1,0,0);      
@@ -178,13 +169,10 @@ function draw() {
             if (keys['a'] || keys['ArrowLeft']) {
                 connection.emit("directionChange", 2)
             } else if (keys['d'] || keys['ArrowRight']) {
-                player.x += player.speed;
                 connection.emit("directionChange", 4)
             } else if (keys['w'] || keys['ArrowUp']) {
-                player.y -= player.speed;
                 connection.emit("directionChange", 1)
             } else if (keys['s'] || keys['ArrowDown']) {
-                player.y += player.speed;
                 connection.emit("directionChange", 3)
             }
             bullets.forEach((bullet) => {
