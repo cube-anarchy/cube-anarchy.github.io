@@ -120,7 +120,7 @@ function draw() {
             rect(canvas.width/2 - canvas.width/5, canvas.height/2 - canvas.width/32.5, canvas.width/2.5, canvas.width/20, btnColor)
             rect(canvas.width/2 - canvas.width/5, canvas.height/2 - canvas.width/10, canvas.width/2.5, canvas.width/20, inputBg)
             display.fillStyle = "black";
-            display.fillText("I need to get a life.", canvas.width/2, canvas.width/9);
+            display.fillText("Cube Anarchy", canvas.width/2, canvas.width/9);
             display.fillText("Play", canvas.width/2, canvas.height/2 + canvas.width/200);
             display.fillText(inputText, canvas.width/2, canvas.height/2 - canvas.width/16)
             if (mouse.x > canvas.width/2 - canvas.width/5 && mouse.x < (canvas.width/2 - canvas.width/5) + canvas.width/2.5 && mouse.y > canvas.height/2 - canvas.width/32.5 && mouse.y < (canvas.height/2 - canvas.width/32.5) + canvas.width/20) {
